@@ -12,4 +12,10 @@ public class IndexController
     {
         return "index";
     }
+
+    @GetMapping("/aktion")
+    public String aktion()
+    {
+        return "aktion";
+    }
 }
