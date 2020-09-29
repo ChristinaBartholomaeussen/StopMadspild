@@ -6,7 +6,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.context.request.WebRequest;
 
 import java.io.FileNotFoundException;
@@ -37,7 +36,6 @@ public class IndexController
 
     }
 
-
     @PostMapping("/postDonation")
     public String postDonation(WebRequest dataFromform) throws IOException {
         MyDonation myDonation = new MyDonation();
@@ -48,11 +46,13 @@ public class IndexController
         myDonation.writeDonationToFile(value);
         donationToDisplay = donationClass;
 
-
-
         return "redirect:/postDonationStart";
+    }
 
-
+    @GetMapping("/omOrg")
+    public String omOrganisationen()
+    {
+        return "omOrganisationen";
     }
 }
 
