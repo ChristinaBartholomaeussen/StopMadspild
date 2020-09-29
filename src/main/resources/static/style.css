@@ -4,6 +4,10 @@
 	--alert-color: #c9ba42;
 }
 
+body {
+	background-color: var(--secondary-color);
+}
+
 * {
 	padding: 0;
 	margin: 0;
@@ -14,7 +18,9 @@
 
 #wrapper {
 	max-width: 1100px;
+	position: relative;
 	margin: 0 auto;
+	background-color: var(--secondary-color);
 }
 
 .dropdown ul {
@@ -25,17 +31,16 @@ nav {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	width: 100%;
+	width: 100vw;
 	background: var(--primary-color);
 	height: 8vh;
-	position: fixed;
+	position: sticky;
 	top: 0;
 	left: 0;
+	
+	
 }
 
-nav:after {
-	opacity: 1;
-}
 
 .flex-container {
 	display: flex;
@@ -72,8 +77,8 @@ nav * {
 .hover-effekt,
 .hover-effekt-logo {
 	margin: 6px;
-	padding: 5px 20px;
-	width: 100%;
+	padding: 5px 10px;
+	width: 75%;
 	transition: 0.2s;
 }
 
