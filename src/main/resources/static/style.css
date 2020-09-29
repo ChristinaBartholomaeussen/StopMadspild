@@ -10,7 +10,6 @@
 	box-sizing: border-box;
 	background-color: var(--secondary-color);
 	list-style: none;
-	color: var(--secondary-color);
 }
 
 #wrapper {
