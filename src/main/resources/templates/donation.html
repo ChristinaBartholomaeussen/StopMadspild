@@ -1,10 +1,27 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
 <body>
-
+<div id="wrapper">
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <div id="form-container">
+                <form id="registration-container" action="/postDonation"method="post">
+                    <label for="amount">Donation</label>
+                    <input type="number" id="amount" name="amount"><br><br>
+                    <input type="submit" value="Submit">
+                </form>
+            </div>
+        </div>
+    <div class="col">
+        <p th:text="${donationToDisplay.getAmount()}"></p>
+    </div>
+    </div>
+</div>
+</div>
 </body>
 </html>
