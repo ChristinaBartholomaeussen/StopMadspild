@@ -121,3 +121,9 @@ nav * {
 .dropdown ul li:hover {
 	background-color: var(--alert-color);
 }
+
+
+a:hover {
+	text-decoration: none;
+	color: var(--secondary-color);
+}
