@@ -153,6 +153,11 @@ a:hover {
 }
 
 
+.container:hover {
+	box-shadow: 0 0 25px 0 rgba(0,0,0,0.2);
+}
+
+
 footer {
 	width: 90vw;
 	margin: 2rem auto;
@@ -180,4 +185,8 @@ footer * {
 	left: 90%;
 	top: 10%;
 	box-shadow: 0 0 25px 0 rgba(0,0,0,0.5);
+}
+
+.logo-container-footer:hover a {
+	color: var(--secondary-color) !important;
 }
