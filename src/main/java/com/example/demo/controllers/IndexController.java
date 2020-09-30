@@ -1,6 +1,8 @@
 package com.example.demo.controllers;
 
+import com.example.demo.models.BeregnerModel;
 import com.example.demo.models.DonationClass;
+import com.example.demo.services.BeregnerService;
 import com.example.demo.services.MyDonation;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -53,6 +55,33 @@ public class IndexController
     {
         return "omOrganisationen";
     }
+
+    //Beregner start
+    BeregnerModel beregnerModel = new BeregnerModel();
+
+    BeregnerService beregnerService = new BeregnerService();
+
+    @GetMapping ("/calc")
+    public String calc(Model calcModel) {
+
+        calcModel.addAttribute("beregnerModel", beregnerModel);
+
+        return "beregner";
+    }
+
+    @PostMapping("/postCalc")
+    public String postCalc(WebRequest dataFromForm) {
+
+        double value = Double.valueOf(dataFromForm.getParameter("output"));
+
+        BeregnerModel calcFromForm = new BeregnerModel(beregnerService.calc(value));
+
+        beregnerModel = calcFromForm;
+
+        return "redirect:/calc";
+    } //Beregner slut
 }
+
+
 
 
