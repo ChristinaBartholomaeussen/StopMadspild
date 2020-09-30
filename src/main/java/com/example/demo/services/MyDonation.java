@@ -26,7 +26,8 @@ public class MyDonation {
 
     }
 
-    public void calculateTotalDonation(double donation) throws IOException {
+    public double calculateTotalDonation(double donation) throws IOException {
+
 
         writeToFile(donation);
 
@@ -44,9 +45,28 @@ public class MyDonation {
 
 
         }
-        System.out.println("Total: " + donationClass.getTotalDonation());
+        double d = donationClass.getTotalDonation();
         scanFile.close();
 
+        return d;
+
+    }
+
+    public double readAndCalculate() throws FileNotFoundException {
+
+        double total = 0;
+
+        Scanner scanFile = new Scanner(file);
+
+        while(scanFile.hasNextLine()){
+            String line = scanFile.nextLine();
+
+            total += Double.valueOf(line);
+
+        }
+
+        System.out.println(total);
+        return total;
     }
 
 

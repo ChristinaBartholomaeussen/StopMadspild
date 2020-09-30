@@ -16,6 +16,9 @@ public class IndexController
 {
     DonationClass donationToDisplay = new DonationClass();
 
+    MyDonation my = new MyDonation();
+
+
     @GetMapping("/")
     public String index()
     {
@@ -29,8 +32,9 @@ public class IndexController
     }
 
     @GetMapping("/postDonationStart")
-    public String index(Model donationModel)
-    {
+    public String index(Model donationModel) throws FileNotFoundException {
+
+        donationToDisplay.setTotalDonation(my.readAndCalculate());
         donationModel.addAttribute("donationToDisplay", donationToDisplay);
         return "donation";
 
@@ -38,12 +42,13 @@ public class IndexController
 
     @PostMapping("/postDonation")
     public String postDonation(WebRequest dataFromform) throws IOException {
+
         MyDonation myDonation = new MyDonation();
 
         double value = Double.valueOf(dataFromform.getParameter("donation"));
 
-        DonationClass donationClass = new DonationClass(value);
-        myDonation.calculateTotalDonation(value);
+        DonationClass donationClass = new DonationClass(myDonation.calculateTotalDonation(value));
+
         donationToDisplay = donationClass;
 
         return "redirect:/postDonationStart";

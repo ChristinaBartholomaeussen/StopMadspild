@@ -11,18 +11,26 @@
         <div class="col">
             <div id="form-container">
                 <form id="registration-container" action="/postDonation"method="post">
-                    <label for="donation">Indsæt beløb du ønsker at donere</label>
-                    <input type="number" id="donation" name="donation"><br><br>
-                    <input type="submit" value="Submit">
+                    <label for="donation">Indsæt beløb du ønsker at donere: </label>
+                    <input type="text" id="donation" name="donation"><br><br>
+                    <input type="submit" value="Doner">
                 </form>
             </div>
         </div>
-    <div class="col">
+    </div>
+        <div class="col">
+            <label for="donation">Mål: 500.000 kr.</label>
 
-        <p th:text="${donationToDisplay.getTotalDonation()}"></p>
-    </div>
+            <p><label for="donation"> Donoret indtil videre: </label>
+
+                <span th:text="${donationToDisplay.getTotalDonation()}"> </span>
+                <span>kr.</span>
+
+            </p>
+        </div>
     </div>
 </div>
-</div>
+
+
 </body>
 </html>

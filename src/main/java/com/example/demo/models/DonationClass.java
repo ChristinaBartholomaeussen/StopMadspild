@@ -2,8 +2,9 @@ package com.example.demo.models;
 
 public class DonationClass {
 
-    private double amount;
+
     private double totalDonation;
+
 
 
     public DonationClass(double totalDonation) {
@@ -11,7 +12,6 @@ public class DonationClass {
     }
 
     public DonationClass(){}
-
 
 
     public double getTotalDonation(){
@@ -23,17 +23,5 @@ public class DonationClass {
     }
 
 
-    public double getAmount() {
-        return amount;
-    }
-
-    public void setAmount(double amount){
-        this.amount = amount;
-    }
-
-    public String toString()
-    {
-        return "Total donation: " + getTotalDonation();
-    }
 
 }
