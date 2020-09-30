@@ -11,7 +11,7 @@ public class DonationClass {
         this.totalDonation = totalDonation;
     }
 
-    public DonationClass(){}
+    public DonationClass() {}
 
 
     public double getTotalDonation(){
