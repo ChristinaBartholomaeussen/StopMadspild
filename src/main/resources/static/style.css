@@ -38,10 +38,10 @@ nav {
 	align-items: center;
 	width: 100vw;
 	background: var(--primary-color);
-	height: 8vh;
-	position: sticky;
-	top: 0;
-	left: 0;
+	height: 10vh;
+	margin-bottom: 100px;
+	
+	
 	
 }
 
