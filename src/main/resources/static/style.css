@@ -1,7 +1,12 @@
+
+
 :root {
 	--primary-color: #2415ab;
 	--secondary-color: #f4f4f4;
 	--alert-color: #c9ba42;
+	
+	
+	font-size: 16px;
 }
 
 body {
@@ -37,7 +42,6 @@ nav {
 	position: sticky;
 	top: 0;
 	left: 0;
-	
 	
 }
 
@@ -77,7 +81,7 @@ nav * {
 .hover-effekt,
 .hover-effekt-logo {
 	margin: 6px;
-	padding: 5px 10px;
+	-padding: 5px 10px;
 	width: 75%;
 	transition: 0.2s;
 }
