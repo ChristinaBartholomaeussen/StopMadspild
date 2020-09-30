@@ -11,13 +11,14 @@
         <div class="col">
             <div id="form-container">
                 <form id="registration-container" action="/postDonation"method="post">
-                    <label for="amount">Donation</label>
-                    <input type="number" id="amount" name="amount"><br><br>
+                    <label for="donation">Indsæt beløb du ønsker at donere</label>
+                    <input type="number" id="donation" name="donation"><br><br>
                     <input type="submit" value="Submit">
                 </form>
             </div>
         </div>
     <div class="col">
+
         <p th:text="${donationToDisplay.getTotalDonation()}"></p>
     </div>
     </div>

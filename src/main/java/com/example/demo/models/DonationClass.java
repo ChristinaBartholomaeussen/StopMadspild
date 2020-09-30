@@ -6,8 +6,8 @@ public class DonationClass {
     private double totalDonation;
 
 
-    public DonationClass(double amount) {
-        this.amount = amount;
+    public DonationClass(double totalDonation) {
+        this.totalDonation = totalDonation;
     }
 
     public DonationClass(){}
@@ -33,7 +33,7 @@ public class DonationClass {
 
     public String toString()
     {
-        return "Amount: " + amount + "\nTotal donation: " + totalDonation;
+        return "Total donation: " + getTotalDonation();
     }
 
 }

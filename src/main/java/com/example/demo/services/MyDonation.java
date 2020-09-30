@@ -10,43 +10,48 @@ import java.util.Scanner;
 
 public class MyDonation {
 
-
+    File file = new File("src/main/resources/TextFiles/donation");
     DonationClass donationClass = new DonationClass();
 
-    public void writeDonationToFile(double input) throws IOException {
+    public double writeToFile(double donation) throws IOException {
 
-
-
-        File file = new File("src/main/resources/TextFiles/donation");
+        String donationToFile = Double.toString(donation);
 
         FileWriter myWriter = new FileWriter(file, true);
 
-        myWriter.write(input + "\n");
+        myWriter.write(donationToFile + "\n");
         myWriter.close();
 
-        Scanner myReader = new Scanner(file);
+        return donation;
 
-        String line;
+    }
 
-        double total =0;
-        while(myReader.hasNext()){
-            line = myReader.nextLine();
+    public void calculateTotalDonation(double donation) throws IOException {
+
+        writeToFile(donation);
+
+        double total = 0;
+
+        Scanner scanFile = new Scanner(file);
+
+        while(scanFile.hasNextLine()){
+            String data = scanFile.nextLine();
+
+            donation = Double.parseDouble(data);
+            total = total + donation;
+            donationClass.setTotalDonation(total);
 
 
-            String[] splits = line.split(" ");
-            for(String s : splits){
-                total += Double.parseDouble(s);
-                donationClass.setTotalDonation(total);
-            }
 
         }
-        myReader.close();
-        System.out.println(total);
+        System.out.println("Total: " + donationClass.getTotalDonation());
+        scanFile.close();
+
+    }
 
 
 
 
 
 
-}
 }

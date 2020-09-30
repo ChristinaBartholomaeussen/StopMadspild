@@ -42,10 +42,10 @@ public class IndexController
     public String postDonation(WebRequest dataFromform) throws IOException {
         MyDonation myDonation = new MyDonation();
 
-        double value = Double.valueOf(dataFromform.getParameter("amount"));
+        double value = Double.valueOf(dataFromform.getParameter("donation"));
 
         DonationClass donationClass = new DonationClass(value);
-        myDonation.writeDonationToFile(value);
+        myDonation.calculateTotalDonation(value);
         donationToDisplay = donationClass;
 
 
