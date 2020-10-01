@@ -1,36 +1,70 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <head>
+    <style>
+
+        .divDonationBox
+        {
+
+            height: 100px;
+            width: 300px;
+            border-style: solid;
+            border-color: black;
+
+        }
+
+
+
+
+    </style>
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
 <body>
+
 <div id="wrapper">
-<div class="container">
-    <div class="row">
-        <div class="col">
-            <div id="form-container">
-                <form id="registration-container" action="/postDonation"method="post">
-                    <label for="donation">Indsæt beløb du ønsker at donere: </label>
-                    <input type="text" id="donation" name="donation"><br><br>
-                    <input type="submit" value="Doner">
+
+
+    <div class="divDonationBox">
+        <div class="container my-5">
+            <div class="row">
+                <div class="col-9">
+                    <p><b>Overskrift</b></p>
+                </div>
+
+
+
+                <div class="col">
+                    <div id="form-container">
+                        <form id="registration-container" action="/postDonation"method="post">
+                        <label for="donation">Indsæt beløb du ønsker at donere: </label>
+                        <input type="text" id="donation" name="donation">
+                        <input type="submit" value="Doner">
                 </form>
             </div>
         </div>
     </div>
-        <div class="col">
-            <label for="donation">Mål: 500.000 kr.</label>
-
-            <p><label for="donation"> Donoret indtil videre: </label>
-
-                <span th:text="${donationToDisplay.getTotalDonation()}"> </span>
-                <span>kr.</span>
-
-            </p>
-        </div>
     </div>
 </div>
+</div>
 
+
+<div class="container">
+    <div class="row">
+    <div class="col">
+        <label for="donation">Mål: 500.000 kr.</label>
+
+        <p><label for="donation"> Donoret indtil videre: </label>
+
+            <span th:text="${donationToDisplay.getTotalDonation()}"> </span>
+            <span>kr.</span>
+
+        </p>
+    </div>
+    </div>
+</div>
 
 </body>
 </html>
