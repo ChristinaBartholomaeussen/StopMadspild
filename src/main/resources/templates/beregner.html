@@ -1,18 +1,108 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+
+    <style>
+        .madspildTabel {
+            margin: auto;
+        }
+
+        .beregnerText {
+            vertical-align: middle;
+        }
+
+        .calc-form {
+            text-align: center;
+        }
+
+        .overskrift {
+            font-weight: bold;
+        }
+
+        .submitButton {
+            margin-top: 10px;
+        }
+
+        .result {
+            border-color: chartreuse;
+            border-style: solid;
+            width: 350px;
+            margin: 10px auto;
+            text-align: center;
+            padding: 10px;
+        }
+
+        .pointer:hover {
+            background-color: chartreuse;
+        }
+
+        .container:hover {
+            box-shadow: 0 0 0px 0 rgba(0,0,0,0);
+        }
+
+        .pointer {
+            width: 150px;
+        }
+
+        #resultX {
+            font-size: 45px;
+        }
+
+        .madspildTabelText {
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .overskriftIMG {
+            margin: auto;
+        }
+
+    </style>
 </head>
-<body>
 
-<form id="calc-form" action="/postCalc" method="post">
-    <label for="output">Input: </label>
-    <input type="number" id="output" name="output">
-    <input type="submit" value="Submit">
-</form>
+<body style="background-color: var(--secondary-color)">
 
-<p th:text="${beregnerModel.getOutput()}"></p>
+<img class="overskriftIMG" src="beregnerOverskrift.jpg">
 
+<div id="wrapper" class="display">
+    
+    <main>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm" style="background-color: var(--secondary-color)">
+                    <p class="overskrift">Overskrift</p>
+                    <p class="beregnerText">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ante ex, luctus quis justo in, sodales tempus metus. Duis porttitor nisl sed massa mattis pharetra. Maecenas condimentum at quam sit amet posuere. Duis scelerisque, metus quis bibendum feugiat, urna dui dignissim augue, sit amet tempus elit velit ac dolor. Nullam iaculis urna est. Sed facilisis arcu a molestie mattis. Ut elit ipsum, venenatis sit amet nulla ut, tempor aliquet erat. Aliquam maximus velit ex, id iaculis odio tincidunt aliquam. Donec ut libero ut nunc facilisis auctor. Maecenas quis purus nunc. In gravida est id risus tincidunt cursus ac vitae ante.</p>
+                </div>
+                <div class="col-sm" style="background-color: var(--secondary-color)">
+                    <p class="madspildTabelText">Gennemsnit af madspild</p>
+                    <img id="madSpildTabel" class="madspildTabel" src="madspildTabel.PNG">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm">
+                    <form class="calc-form" action="/postCalc" method="post">
+                        <label for="output">Madspild i kg pr. år:</label>
+                        <br>
+                        <input type="number" id="output" name="output">
+                        <br>
+                        <div class="submitButton">
+                        <input type="submit" value="Udregn" class="pointer">
+                        </div>
+                        <div class="result">
+                            <label for="resultX">CO2 udledning pr. år</label>
+                            <p id="resultX" th:text="${beregnerModel.getOutput()}"></p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+
+</div>
 </body>
 </html>
