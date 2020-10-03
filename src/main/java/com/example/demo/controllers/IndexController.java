@@ -38,9 +38,9 @@ public class IndexController
 
         donationToDisplay.setTotalDonation(my.readAndCalculate());
         donationModel.addAttribute("donationToDisplay", donationToDisplay);
-        return "donation";
-
+        return "donationStartSide";
     }
+
 
     @PostMapping("/postDonation")
     public String postDonation(WebRequest dataFromform) throws IOException {
@@ -53,7 +53,15 @@ public class IndexController
 
         donationToDisplay = donationClass;
 
-        return "redirect:/postDonationStart";
+        return "redirect:/postDonationEnd";
+    }
+
+    @GetMapping("/postDonationEnd")
+    public String donationEnd(Model donationModel) throws FileNotFoundException {
+
+        donationToDisplay.setTotalDonation(my.readAndCalculate());
+        donationModel.addAttribute("donationToDisplay", donationToDisplay);
+        return "donationEndSide";
     }
 
     @GetMapping("/omOrg")
