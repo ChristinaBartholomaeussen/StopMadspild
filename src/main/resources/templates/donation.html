@@ -15,96 +15,96 @@
         }
 
 
+
+        .donationSoFar{
+            border-color: chartreuse;
+            border-style: solid;
+            width: 350px;
+            margin: auto;
+            text-align: center;
+            padding: 10px;
+        }
+     .
+
+
     </style>
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
-<body>
+<body style="background-color: var(--secondary-color)">
+
 
 <div id="wrapper">
 
 
-        <div class="container">
-
-
-
-                    <p><b>Overskrift</b></p>
-
-
+    <p><b>Overskrift</b></p>
 
                 <div class="row">
+                    <div>
+                        <div class="col" style="width: 625px">
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                Sed ante ex, luctus quis justo in, sodales tempus metus.
+                                Duis porttitor nisl sed massa mattis pharetra. Maecenas
+                                condimentum at quam sit amet posuere. Duis scelerisque,
+                                metus quis bibendum feugiat, urna dui dignissim augue, sit
+                                amet tempus elit velit ac dolor. Nullam iaculis urna est.
+                                Sed facilisis arcu a molestie mattis. Ut elit ipsum, venenatis
+                                sit amet nulla ut, tempor aliquet erat. Aliquam maximus velit ex,
+                                id iaculis odio tincidunt aliquam. Donec ut libero ut nunc facilisis
+                                auctor. Maecenas quis purus nunc. In gravida est id risus tincidunt
+                                cursus ac vitae ante.
+                            </p>
+                    </div>
+            </div>
+                    <div>
+                        <div class="col-xs-1" align="center">
+
+                            <div class="divDonateBottum">
+
+                                <div id="form-container">
+                                <form id="registration-container" action="/postDonation"method="post">
+                                    <label for="donation" style="text-align: center">Indsæt beløb du ønsker at donere:
+                                    </label>
+                                    <br>
+                                    <input type="text" id="donation" name="donation" style="text-align: center"> <br>
+
+                                    <div style="margin-top: 10px">
+                                        <input type="submit"
+                                               class="contactform1"
+                                               value="Doner" style="width: 150px">
+                                    </div>
+                                </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+    </div>
 
             <div>
-                    <div class="col" style="width: 625px">
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Sed ante ex, luctus quis justo in, sodales tempus metus.
-                    Duis porttitor nisl sed massa mattis pharetra. Maecenas
-                    condimentum at quam sit amet posuere. Duis scelerisque,
-                    metus quis bibendum feugiat, urna dui dignissim augue, sit
-                    amet tempus elit velit ac dolor. Nullam iaculis urna est.
-                    Sed facilisis arcu a molestie mattis. Ut elit ipsum, venenatis
-                    sit amet nulla ut, tempor aliquet erat. Aliquam maximus velit ex,
-                    id iaculis odio tincidunt aliquam. Donec ut libero ut nunc facilisis
-                    auctor. Maecenas quis purus nunc. In gravida est id risus tincidunt
-                    cursus ac vitae ante.
-                </p>
-                    </div>
-            </div>
 
 
-        <div>
-                <div class="col-xs-1" align="center">
-                    <div class="divDonateBottum">
+        <div class="row" style="margin-top: 50px">
+            <div class="col">
 
-                    <div id="form-container">
-                        <form id="registration-container" action="/postDonation"method="post">
-                        <label for="donation" style="text-align: center">Indsæt beløb du ønsker at donere:
-                        </label>
-                            <br>
-                        <input type="text" id="donation" name="donation" style="text-align: center"> <br>
-                            <div style="margin-top: 10px">
-                                <input type="submit"
-                                       class="contactform1"
-                                       value="Doner" style="width: 150px">
-                            </div>
+                <div class="donationSoFar">
+                    <p><label for="donation"> Donoret indtil videre: </label>
+                        <br>
+<label style="font-size: 45px">
+                        <span th:text="${donationToDisplay.getTotalDonation()}"> </span>
+                        <span>kr.</span>
+</label>
 
-
-                        </form>
-                    </div>
+                    </p>
                 </div>
-                </div>
-
-        </div>
-
-                </div>
-            </div>
-
-
-
-
-</div>
-
-
-
-
-
-
-<div class="container">
-    <div class="row">
-    <div class="col">
-        <label for="donation">Mål: 500.000 kr.</label>
-
-        <p><label for="donation"> Donoret indtil videre: </label>
-
-            <span th:text="${donationToDisplay.getTotalDonation()}"> </span>
-            <span>kr.</span>
-
-        </p>
     </div>
     </div>
+
 </div>
-</div>
+
+
+
 
 </body>
 </html>
