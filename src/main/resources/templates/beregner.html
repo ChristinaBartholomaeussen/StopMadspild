@@ -16,6 +16,18 @@
 	<title>
 		STOP Madspild | en side hvor du kan lære om stopningen af madspild.
 	</title>
+
+	<script type="text/javascript">
+		function empty() {
+			var x;
+			x = document.getElementById("output").value;
+			if (x == "") {
+				alert("Ugyldigt input");
+				return false;
+			};
+		}
+	</script>
+
     <style>
         .madspildTabel {
             margin: auto;
@@ -68,8 +80,14 @@
         }
 
         .overskriftIMG {
-            margin: auto;
+            margin: 20px auto;
         }
+
+		input::-webkit-outer-spin-button,
+		input::-webkit-inner-spin-button {
+			-webkit-appearance: none;
+			margin: 0;
+		}
 
     </style>
 </head>
@@ -105,7 +123,7 @@
 <img class="overskriftIMG" src="beregnerOverskrift.jpg">
 
 <div id="wrapper" class="display">
-    
+
     <main>
         <div class="container">
             <div class="row">
@@ -126,11 +144,11 @@
                         <input type="number" id="output" name="output">
                         <br>
                         <div class="submitButton">
-                        <input type="submit" value="Udregn" class="pointer">
+                        <input type="submit" value="Udregn" class="pointer" onclick="empty()">
                         </div>
                         <div class="result">
-                            <label for="resultX">CO2 udledning pr. år</label>
-                            <p id="resultX" th:text="${beregnerModel.getOutput()}"></p>
+                            <label for="resultX">CO2 udledning i kg pr. år</label>
+                            <p id="resultX" th:text="${#numbers.formatDecimal(beregnerModel.getOutput(), 1, 'DEFAULT', 2, 'DEFAULT') }"></p>
                         </div>
                     </form>
                 </div>
