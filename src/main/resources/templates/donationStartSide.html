@@ -3,9 +3,21 @@
 <link rel="stylesheet" href="style.css">
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <head>
-    <style>
-        .divDonateBottum{
 
+    <!--Metode, der tjekker om input feltet er tomt.-->
+    <script type="text/javascript">
+        function empty() {
+            var x;
+            x = document.getElementById("donation").value;
+            if (x == "") {
+                alert("Ugyldigt input");
+                return false;
+            };
+        }
+        </script>
+
+    <style>
+        .div-donate{
             margin-top: 40px;
             margin-left: 80px;
         }
@@ -14,9 +26,15 @@
             background-color: chartreuse;
         }
 
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
 
 
-        .donationSoFar{
+
+        .donatation-recieved{
             border-color: chartreuse;
             border-style: solid;
             width: 350px;
@@ -24,7 +42,9 @@
             text-align: center;
             padding: 10px;
         }
-        .
+        .overskriftIMG{
+            margin: auto;
+        }
 
 
     </style>
@@ -33,8 +53,10 @@
 </head>
 <body style="background-color: var(--secondary-color)">
 
-
 <div id="wrapper">
+<img class="overskriftIMG" src="donationImage.jpg">
+
+
 
 
     <p><b>Overskrift</b></p>
@@ -60,18 +82,19 @@
         <div>
             <div class="col-xs-1" align="center">
 
-                <div class="divDonateBottum">
+                <div class="div-donate">
 
                     <div id="form-container">
                         <form id="registration-container" action="/postDonation"method="post">
-                            <label for="donation" style="text-align: center">Indsæt beløb du ønsker at donere:
+                            <label for="donation" style="text-align: center"><b>Indsæt beløb du ønsker at donere:</b>
                             </label>
                             <br>
-                            <input type="text" id="donation" name="donation" style="text-align: center"> <br>
+                            <input type="number" min="1" id="donation" name="donation" style="text-align: center"> <span>kr.</span><br>
 
                             <div style="margin-top: 10px">
                                 <input type="submit"
                                        class="contactform1"
+                                       onclick="empty()"
                                        value="Støt" style="width: 150px">
                             </div>
                         </form>
@@ -88,7 +111,7 @@
         <div class="row" style="margin-top: 50px">
             <div class="col">
 
-                <div class="donationSoFar">
+                <div class="donatation-recieved">
                     <p><label for="donation"> Folk har støttet med </label>
                         <br>
                         <label style="font-size: 45px">

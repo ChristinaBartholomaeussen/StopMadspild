@@ -4,22 +4,17 @@
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <head>
     <style>
-        .divDonateBottum{
+        .div-donate{
 
             margin-top: 40px;
             margin-left: 80px;
-        }
-
-        .contactform1:hover{
-            background-color: chartreuse;
         }
 
         .image{
             margin: auto;
         }
 
-
-        .donationSoFar{
+        .donatation-recieved{
             border-color: chartreuse;
             border-style: solid;
             width: 350px;
@@ -27,7 +22,9 @@
             text-align: center;
             padding: 10px;
         }
-        .
+        .overskriftIMG{
+            margin: auto;
+        }
 
 
     </style>
@@ -38,7 +35,7 @@
 
 
 <div id="wrapper">
-
+    <img class="overskriftIMG" src="donationImage.jpg">
 
     <p><b>Overskrift</b></p>
 
@@ -63,7 +60,7 @@
         <div>
             <div class="col-xs-1" align="center">
 
-                <div class="divDonateBottum">
+                <div class="div-donate">
 
                     <div id="form-container">
                         <form id="registration-container" action="/postDonation"method="post">
@@ -87,7 +84,7 @@
         <div class="row" style="margin-top: 50px">
             <div class="col">
 
-                <div class="donationSoFar">
+                <div class="donatation-recieved">
                     <p><label> Folk har støttet med </label>
                         <br>
                         <label style="font-size: 45px">
