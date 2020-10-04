@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<head>
+    <style>
+        .divDonateBottum{
+
+            margin-top: 40px;
+            margin-left: 80px;
+        }
+
+        .contactform1:hover{
+            background-color: chartreuse;
+        }
+
+
+
+        .donationSoFar{
+            border-color: chartreuse;
+            border-style: solid;
+            width: 350px;
+            margin: auto;
+            text-align: center;
+            padding: 10px;
+        }
+        .
+
+
+    </style>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body style="background-color: var(--secondary-color)">
+
+
+<div id="wrapper">
+
+
+    <p><b>Overskrift</b></p>
+
+    <div class="row">
+        <div>
+            <div class="col" style="width: 625px">
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Sed ante ex, luctus quis justo in, sodales tempus metus.
+                    Duis porttitor nisl sed massa mattis pharetra. Maecenas
+                    condimentum at quam sit amet posuere. Duis scelerisque,
+                    metus quis bibendum feugiat, urna dui dignissim augue, sit
+                    amet tempus elit velit ac dolor. Nullam iaculis urna est.
+                    Sed facilisis arcu a molestie mattis. Ut elit ipsum, venenatis
+                    sit amet nulla ut, tempor aliquet erat. Aliquam maximus velit ex,
+                    id iaculis odio tincidunt aliquam. Donec ut libero ut nunc facilisis
+                    auctor. Maecenas quis purus nunc. In gravida est id risus tincidunt
+                    cursus ac vitae ante.
+                </p>
+            </div>
+        </div>
+        <div>
+            <div class="col-xs-1" align="center">
+
+                <div class="divDonateBottum">
+
+                    <div id="form-container">
+                        <form id="registration-container" action="/postDonation"method="post">
+                            <label for="donation" style="text-align: center">Indsæt beløb du ønsker at donere:
+                            </label>
+                            <br>
+                            <input type="text" id="donation" name="donation" style="text-align: center"> <br>
+
+                            <div style="margin-top: 10px">
+                                <input type="submit"
+                                       class="contactform1"
+                                       value="Støt" style="width: 150px">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div>
+
+
+        <div class="row" style="margin-top: 50px">
+            <div class="col">
+
+                <div class="donationSoFar">
+                    <p><label for="donation"> Folk har støttet med </label>
+                        <br>
+                        <label style="font-size: 45px">
+                            <span th:text="${#numbers.formatDecimal(donationToDisplay.getTotalDonation(), 1, 'DEFAULT', 2, 'DEFAULT') }"> </span>
+                            <span>kr.</span>
+                        </label>
+
+                    </p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+
+
+</body>
+</html>
