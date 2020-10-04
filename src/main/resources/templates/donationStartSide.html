@@ -1,18 +1,22 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-<link rel="stylesheet" href="style.css">
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
 <head>
+
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css" />
 
     <!--Metode, der tjekker om input feltet er tomt.-->
     <script type="text/javascript">
         function empty() {
             var x;
             x = document.getElementById("donation").value;
-            if (x == "") {
+            if (x === "") {
                 alert("Ugyldigt input");
                 return false;
-            };
+            }
         }
         </script>
 
@@ -54,7 +58,7 @@
 <body style="background-color: var(--secondary-color)">
 
 <div id="wrapper">
-<img class="overskriftIMG" src="donationImage.jpg">
+<img class="overskriftIMG" src="donationImage.jpg" alt="madspild">
 
 
 
@@ -85,7 +89,7 @@
                 <div class="div-donate">
 
                     <div id="form-container">
-                        <form id="registration-container" action="/postDonation"method="post">
+                        <form id="registration-container" action="/postDonation" method="post">
                             <label for="donation" style="text-align: center"><b>Indsæt beløb du ønsker at donere:</b>
                             </label>
                             <br>
