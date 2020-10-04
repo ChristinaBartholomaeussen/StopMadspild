@@ -1,9 +1,18 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-<link rel="stylesheet" href="style.css">
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
+	<!-- GOOGLE fonts -->
+	<link href="https://fonts.googleapis.com/css2?family=David+Libre&family=Montserrat&family=Roboto+Mono:wght@500&display=swap" rel="stylesheet">
+	<!-- Bootstrap -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link rel="stylesheet" href="style.css" />
+	<title>
+		STOP Madspild | en side hvor du kan lære om stopningen af madspild.
+	</title>
     <!--Metode, der tjekker om input feltet er tomt.-->
     <script type="text/javascript">
         function empty() {
@@ -52,6 +61,33 @@
     <title>Title</title>
 </head>
 <body style="background-color: var(--secondary-color)">
+
+<header>
+	<nav>
+		<div class="logo-container">
+			<h2 ><a href="/" class="hover-effekt-logo">
+				Stop Madspild..<span class="logo-animation">.</span>
+
+			</a></h2>
+		</div>
+
+		<div class="flex-container">
+
+			<div class="dropdown-container">
+				<h2 class="hover-effekt"><a href="omOrg">Om os</a></h2>
+			</div>
+			<div class="dropdown-container">
+				<h2 class="hover-effekt"><a href="/calc">Beregner</a></h2>
+			</div>
+			<div class="dropdown-container">
+				<h2 class="hover-effekt"><a href="aktion">Aktion</a></h2>
+			</div>
+			<div class="dropdown-container">
+				<h2 class="hover-effekt"><a href="/postDonationStart">Støt Os</a></h2>
+			</div>
+		</div>
+	</nav>
+</header>
 
 <div id="wrapper">
 <img class="overskriftIMG" src="donationImage.jpg">
@@ -129,6 +165,39 @@
 
 
 
+<footer>
+	<div class="site-navigation">
 
+		<div class="dropdown-container">
+			<h2 class="hover-effekt"><a href="omOrg">Om os</a></h2>
+		</div>
+		<div class="dropdown-container">
+			<h2 class="hover-effekt"><a href="/calc">Beregner</a></h2>
+		</div>
+		<div class="dropdown-container">
+			<h2 class="hover-effekt"><a href="aktion">Aktion</a></h2>
+		</div>
+		<div class="dropdown-container">
+			<h2 class="hover-effekt"><a href="/postDonationStart">Støt Os</a></h2>
+		</div>
+
+	</div>
+	<div class="contact">
+		<ul>
+			<li>Telefon: +4527587476</li>
+			<li>Addresse: Lygten 36, 2400 København NV</li>
+			<li>Email: oscar.vinther@gmail.com</li>
+			<li>CVR: 12345678</li>
+
+			<i class="fab fa-instagram"></i>
+		</ul>
+	</div>
+	<div class="logo-container-footer">
+		<a href="/" class="hover-effekt-logo">
+			Stop Madspild..<span class="logo-animation">.</span>
+
+		</a></h2>
+	</div>
+</footer>
 </body>
 </html>

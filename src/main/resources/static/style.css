@@ -11,14 +11,25 @@
 	
 	/* Gør at tekstørrelsen er ens på alle computere. Og man kan bruge em og rem, som en brugelig størrels */
 	font-size: 16px;
+	
+	--logo-font: 'Roboto Mono', monospace;
+	--header-font: 'Montserrat', sans-serif;
+	--paragraf-font: 'David Libre', serif;
 }
 
 body {
 	background-color: var(--secondary-color);
+	font-family: var(--paragraf-font);
 }
 
 img {
 	display: block;
+}
+
+
+
+h2 {
+	font-family: var(--header-font);
 }
 
 * {
@@ -45,7 +56,6 @@ nav {
 	justify-content: space-between;
 	align-items: center;
 	width: 90vw;
-	-position: fixed;
 	z-index: 999;
 	left: 5vw;
 	top: 30px;
@@ -121,6 +131,14 @@ nav * {
 	text-align: center;
 	text-decoration: none;
 	padding: 0.5vh;
+	font-family: var(--logo-font);
+}
+
+
+
+.logo-animation {
+	display: inline;
+	animation: dot 2s infinite;
 }
 
 .hover-effekt:hover a {
@@ -158,6 +176,8 @@ a:hover {
 }
 
 
+
+
 footer {
 	width: 90vw;
 	margin: 2rem auto;
@@ -166,6 +186,9 @@ footer {
 	box-shadow: 0 0 50px 0 rgba(0,0,0,0.5);
 	padding: 2.5rem;
 	position: relative;
+	display: flex;
+	align-content: space-evenly;
+	justify-content: space-around;
 	margin-bottom: 2rem;
 }
 
@@ -179,6 +202,7 @@ footer * {
 	text-transform: uppercase;
 	position: absolute;
 	padding: 0.5rem;
+	width: 10rem;
 	z-index: 999;
 	text-align: left;
 	background-color: var(--primary-color);
@@ -189,4 +213,35 @@ footer * {
 
 .logo-container-footer:hover a {
 	color: var(--secondary-color) !important;
+}
+
+.site-navigation {
+	display: flex;
+	flex-direction: column;
+	text-align: left;
+	width: 33%;
+	border-right: 2px solid var(--secondary-color);
+}
+
+.site-navigation * {
+	font-size: 1rem;
+	text-align: left;
+	
+}
+
+
+@keyframes dot {
+	0% {
+		opacity: 1;
+	}
+	2% {
+		opacity: 0;
+	}
+	
+	50% {
+		opacity: 1;
+	}
+	52% {
+		opacity: 0;
+	}
 }
