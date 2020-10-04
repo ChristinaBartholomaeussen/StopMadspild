@@ -90,11 +90,16 @@ public class IndexController
     @PostMapping("/postCalc")
     public String postCalc(WebRequest dataFromForm) {
 
-        double value = Double.valueOf(dataFromForm.getParameter("output"));
+        try {
+            double value = Double.valueOf(dataFromForm.getParameter("output"));
 
-        BeregnerModel calcFromForm = new BeregnerModel(beregnerService.calc(value));
+            BeregnerModel calcFromForm = new BeregnerModel(beregnerService.calc(value));
 
-        beregnerModel = calcFromForm;
+            beregnerModel = calcFromForm;
+
+        }  catch (NumberFormatException e) {
+            return "redirect:/calc";
+        }
 
         return "redirect:/calc";
     } //Beregner slut
