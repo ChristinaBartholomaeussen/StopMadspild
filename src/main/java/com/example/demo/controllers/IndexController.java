@@ -45,14 +45,18 @@ public class IndexController
     @PostMapping("/postDonation")
     public String postDonation(WebRequest dataFromform) throws IOException {
 
-        MyDonation myDonation = new MyDonation();
+        try {
+            MyDonation myDonation = new MyDonation();
 
-        double value = Double.valueOf(dataFromform.getParameter("donation"));
+            double value = Double.valueOf(dataFromform.getParameter("donation"));
 
-        DonationClass donationClass = new DonationClass(myDonation.calculateTotalDonation(value));
+            DonationClass donationClass = new DonationClass(myDonation.calculateTotalDonation(value));
 
-        donationToDisplay = donationClass;
-
+            donationToDisplay = donationClass;
+        }catch (NumberFormatException e)
+        {
+            return "redirect:/postDonationStart";
+        }
         return "redirect:/postDonationEnd";
     }
 
