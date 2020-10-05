@@ -141,7 +141,10 @@ nav * {
 	font-family: var(--logo-font);
 }
 
-
+img {
+	width: 100% !important;
+	height: auto !important;
+}
 
 .logo-animation {
 	display: inline;
