@@ -43,7 +43,7 @@ h2 {
 #wrapper {
 	max-width: 1100px;
 	position: relative;
-	margin: 2rem auto;
+	margin: 5.2rem auto;
 	background-color: var(--secondary-color);
 }
 
@@ -60,6 +60,7 @@ nav {
 	left: 5vw;
 	position: relative;
 	z-index: 800;
+	left: 0;
 	top: 30px;
 	background: var(--primary-color);
 	box-shadow: 0 0 50px 0 rgba(0,0,0,0.5);
@@ -98,8 +99,10 @@ nav * {
 	z-index: 999;
 	padding: 0.5rem;
 	text-align: left;
+	vertical-align: center;
 	left: -30px;
 	box-shadow: 0 0 25px 5px rgba(0,0,0,0.5);
+	height: 15vh;
 }
 
 .logo-container a:hover {
@@ -146,12 +149,10 @@ nav * {
 }
 
 .hover-effekt:hover a {
-	-color: var(--primary-color);
-	-background-color: var(--alert-color);
-	color: var(--secondary-color);
 	text-decoration: none;
 	box-shadow: 0 0 25px 5px rgba(0,0,0,0.5);
 }
+
 
 .dropdown-container:hover .dropdown {
 	display: block;
