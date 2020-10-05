@@ -141,7 +141,7 @@ nav * {
 	font-family: var(--logo-font);
 }
 
-img {
+.overskriftIMG {
 	width: 100% !important;
 	height: auto !important;
 }
