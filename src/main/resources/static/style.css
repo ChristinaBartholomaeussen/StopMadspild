@@ -7,7 +7,7 @@
 	*/
 	--primary-color: #24ab15;
 	--secondary-color: #f4f4f4;
-	--alert-color: #c9ba42;
+	--alert-color: #9534eb;
 	
 	/* Gør at tekstørrelsen er ens på alle computere. Og man kan bruge em og rem, som en brugelig størrels */
 	font-size: 16px;
@@ -58,10 +58,12 @@ nav {
 	width: 90vw;
 	z-index: 999;
 	left: 5vw;
+	position: relative;
+	z-index: 800;
 	top: 30px;
 	background: var(--primary-color);
 	box-shadow: 0 0 50px 0 rgba(0,0,0,0.5);
-	height: 10vh;
+	height: 11vh;
 	margin: 30px auto 0;
 }
 
@@ -69,8 +71,9 @@ nav {
 
 .flex-container {
 	display: flex;
-	width: 50%;
-	justify-content: space-evenly;
+	width: 80%;
+	align-items: center;
+	justify-content: right;
 }
 
 nav * {
@@ -92,9 +95,11 @@ nav * {
 	cursor: pointer;
 	text-transform: uppercase;
 	position: relative;
+	z-index: 999;
 	padding: 0.5rem;
 	text-align: left;
-	box-shadow: 0 0 25px 0 rgba(0,0,0,0.5);
+	left: -30px;
+	box-shadow: 0 0 25px 5px rgba(0,0,0,0.5);
 }
 
 .logo-container a:hover {
@@ -116,7 +121,6 @@ nav * {
 .hover-effekt {
 	margin: 6px;
 	width: 75%;
-
 }
 
 .hover-effekt a {
@@ -142,9 +146,11 @@ nav * {
 }
 
 .hover-effekt:hover a {
-	color: var(--primary-color);
-	background-color: var(--alert-color);
+	-color: var(--primary-color);
+	-background-color: var(--alert-color);
+	color: var(--secondary-color);
 	text-decoration: none;
+	box-shadow: 0 0 25px 5px rgba(0,0,0,0.5);
 }
 
 .dropdown-container:hover .dropdown {
