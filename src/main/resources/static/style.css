@@ -150,6 +150,7 @@ nav * {
 
 .hover-effekt:hover a {
 	text-decoration: none;
+	color: var(--secondary-color);
 	box-shadow: 0 0 25px 5px rgba(0,0,0,0.5);
 }
 
